@@ -22,7 +22,7 @@ It is assumed that the streaming source
 
 A pub/sub approach was used to design the program. The publishing is provided by the streaming source. This program provided the subscription part of the pub/sub.
 
-Questions to be answered by the system are based ono the symbol and flags. As such the system segregates and accumulates the statistical data per symbol. Any locks and concurrency are handled on the symbol level to ensure that data is not corrupted at that level.
+Questions to be answered by the system are based on the symbol and flags. As such the system segregates and accumulates the statistical data per symbol. Any locks and concurrency are handled on the symbol level to ensure that data is not corrupted at that level.
 
 Program structure consists of api, model and the statistical packages; average, count and largest. Each statistical package contains a subscriber and accumulator
 
@@ -30,7 +30,7 @@ Program structure consists of api, model and the statistical packages; average, 
 
  - Accumulator segregates the trades by symbol. A single instance of the accumulator is created per symbol. For each symbol the statistics are calculated in a thread safe manner
 
- A test driven approach was used. Unit tests were created for the statistical functions following by implements of the logic. At each build cycle the unit tests are evaluated automatically. If any of the tests fail, the build fails.
+ A test driven approach was used. Unit tests were created for the statistical functions followed by implementation of the logic. At each build cycle the unit tests are evaluated automatically. If any of the tests fail, the build fails.
 
 Java 8 and maven 3 were used to develop, manage dependencies and build the program.
 
